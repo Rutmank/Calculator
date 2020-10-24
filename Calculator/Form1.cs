@@ -12,13 +12,24 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        public string action;
+        public string number1;
+        public bool flag; // Флаг, который используется для указания начала набора второго числа
+
         public Form1()
         {
+            flag = false;
             InitializeComponent();
         }
 
         private void button22_Click(object sender, EventArgs e) // Кнопки цифр
         {
+            if (flag == true) // После нажатия действия происходит стирание поля, а также обнуление флага
+            {
+                flag = false;
+                textBox1.Text = "0";
+            }
+
             Button A = (Button)sender; // Объявляем, что нажатой кнопкой становится А
             if (textBox1.Text=="0") // Заменяет 0 новыми данными при начале работы
             {
@@ -36,10 +47,18 @@ namespace Calculator
             textBox1.Text = "0";
         }
 
+        private void button20_Click(object sender, EventArgs e)
+        {
+            Button A = (Button)sender;
+            action = A.Text; // Запись нажатой кнопки действия 
+            number1 = textBox1.Text; // Запоминание числа, которое было заиписано 
+            flag = true; // стирание поля перед началом второй цифры
+        }
 
 
 
-        
+
+
         //b = Convert.ToDouble(textBox1.Text);
         //switch (sign)
         //{
