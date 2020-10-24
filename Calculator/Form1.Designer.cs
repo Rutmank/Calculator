@@ -113,6 +113,7 @@
             this.button23.TabIndex = 46;
             this.button23.Text = ".";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button22
             // 
@@ -134,6 +135,7 @@
             this.button21.TabIndex = 44;
             this.button21.Text = "±";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button20
             // 
@@ -287,6 +289,7 @@
             this.button7.TabIndex = 30;
             this.button7.Text = "√";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -295,8 +298,9 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 42);
             this.button6.TabIndex = 29;
-            this.button6.Text = "²";
+            this.button6.Text = "x²";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button4
             // 
@@ -313,6 +317,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(288, 423);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
