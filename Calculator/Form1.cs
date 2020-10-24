@@ -17,42 +17,46 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void button22_Click(object sender, EventArgs e)
+        private void button22_Click(object sender, EventArgs e) // Кнопки цифр
         {
-            textBox1.Text += (sender as Button).Text; // К текущему тексту прибавляется текст, расположенный на нажатой кнопке
-        }
-
-        double a = 0, b = 0, c = 0;
-
-        char sign = '+';
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            a = Convert.ToDouble(textBox1.Text); // Конвертация текста в double 
-            sign = (sender as Button).Text[0]; // Присваивание первого символа кнопки
-            textBox1.Clear(); // Очистка поля
-        }
-
-        private void button24_Click(object sender, EventArgs e) // Знак равенства 
-        {
-            b = Convert.ToDouble(textBox1.Text);
-            switch (sign)
+            Button A = (Button)sender; // Объявляем, что нажатой кнопкой становится А
+            if (textBox1.Text=="0") // Заменяет 0 новыми данными при начале работы
             {
-                case '+': c = a + b;
-                    break;
-                case '-': c = a - b;
-                    break;
-                case '÷': c = a / b;
-                    break;
-                case '×': c = a * b;
-                    break;
-                case '√': c = Math.Sqrt(a);
-                    break;
-                case '²': c = a * a;
-                    break;
+                textBox1.Text = A.Text;
             }
-            textBox1.Text = c.ToString(); // Присваивание текстбоксу C в стринге
+            else
+            {
+                textBox1.Text = textBox1.Text + A.Text; // К текущему тексту прибавляется текст, расположенный на нажатой кнопке
+            }
+            
         }
+
+        private void button4_Click(object sender, EventArgs e) // Кнопка обнуления текста 
+        {
+            textBox1.Text = "0";
+        }
+
+
+
+
+        
+        //b = Convert.ToDouble(textBox1.Text);
+        //switch (sign)
+        //{
+        //    case '+': c = a + b;
+        //        break;
+        //    case '-': c = a - b;
+        //        break;
+        //    case '÷': c = a / b;
+        //        break;
+        //    case '×': c = a * b;
+        //        break;
+        //    case '√': c = Math.Sqrt(b);
+        //        break;
+        //    case '²': c = a * a;
+        //        break;
+        //}
+        //textBox1.Text = c.ToString(); // Присваивание текстбоксу C в стринге
 
 
     }
