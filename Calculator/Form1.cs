@@ -47,12 +47,32 @@ namespace Calculator
             textBox1.Text = "0";
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void button20_Click(object sender, EventArgs e) // Кнопка простых действий
         {
             Button A = (Button)sender;
             action = A.Text; // Запись нажатой кнопки действия 
             number1 = textBox1.Text; // Запоминание числа, которое было заиписано 
             flag = true; // стирание поля перед началом второй цифры
+        }
+
+        private void button24_Click(object sender, EventArgs e) // Кнопка равно
+        {
+            double dNumber1, dNumber2, result;
+            dNumber1 = Convert.ToDouble(number1); // форматирование в double числа для работы с ним
+            dNumber2 = Convert.ToDouble(textBox1.Text); // вторая переменная - это число в текстбоксе
+            if(action == "+") // Создание действий по принимаемым значениям для простых действий
+            {
+                result = dNumber1 + dNumber2;
+            } else if (action == "-")
+            {
+                result = dNumber1 - dNumber2;
+            } else if (action == "×")
+            {
+                result = dNumber1 * dNumber2;
+            } else if (action == "÷")
+            {
+                result = dNumber1 / dNumber2;
+            }
         }
 
 
